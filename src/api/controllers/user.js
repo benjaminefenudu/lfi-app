@@ -52,8 +52,7 @@ exports.logIn = async (req, res) => {
 
   // Check if user account exists in database
   const user = await User.findOne({
-    email: req.body.email,
-    phoneNo: req.body.phoneNo,
+    $or: [{ email: req.body.email }, { phoneNo: req.body.phoneNo }],
   });
   if (!user)
     return res
