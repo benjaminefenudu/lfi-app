@@ -6,11 +6,11 @@ exports.lostItem = (item) => {
     name: Joi.string().min(2).max(255).required(),
     category: Joi.string().min(2).max(255).required(),
     description: Joi.string().min(2).max(255).required(),
-    imageURI: Joi.string().max(255).required(),
+    imageURI: Joi.string().max(255),
     dateLost: Joi.string().min(2).max(255).required(),
     state: Joi.string().min(2).max(255).required(),
     town: Joi.string().min(2).max(255).required(),
-    preciseLocation: Joi.string().max(255).required(),
+    preciseLocation: Joi.string().max(255),
     reward: Joi.string().min(2).max(255).required(),
   }).unknown();
 
@@ -27,8 +27,8 @@ exports.foundItem = (item) => {
     dateFound: Joi.string().min(2).max(255).required(),
     state: Joi.string().min(2).max(255).required(),
     town: Joi.string().min(2).max(255).required(),
-    preciseLocation: Joi.string().max(255).required(),
-    reward: Joi.string().min(2).max(255).required(),
+    preciseLocation: Joi.string().max(255),
+    questions: Joi.string().max(255),
   }).unknown();
 
   return schema.validate(item);

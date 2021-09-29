@@ -40,7 +40,7 @@ exports.reportFoundItem = async (req, res) => {
 
     res
       .status(201)
-      .json({ status: "success", msg: "Lost item reported.", foundItem });
+      .json({ status: "success", msg: "Found item reported.", foundItem });
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
