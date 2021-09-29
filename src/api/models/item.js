@@ -45,9 +45,11 @@ const lostItemSchema = new Schema({
     type: String,
     required: true,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
-
-module.exports = mongoose.model("lostItem", lostItemSchema);
 
 // FOUND ITEM MODEL
 const foundItemSchema = new Schema({
@@ -93,6 +95,12 @@ const foundItemSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Question",
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
-module.exports = mongoose.model("foundItem", foundItemSchema);
+const LostItem = mongoose.model("lostItem", lostItemSchema);
+const FoundItem = mongoose.model("foundItem", foundItemSchema);
+module.exports = { LostItem, FoundItem };

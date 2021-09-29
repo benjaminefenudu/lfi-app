@@ -5,9 +5,8 @@ const cookieParser = require("cookie-parser");
 
 // Other imports
 const database = require("./config/database");
-const authorize = require("./src/api/middlewares/authorize");
-
-// Import routes
+const userRoute = require("./src/api/routes/user");
+const itemRoute = require("./src/api/routes/item");
 
 // Fetch database, app listen
 const app = express();
@@ -25,3 +24,5 @@ app.get("/", (req, res) => {
 });
 
 // Set base routes
+app.use("/user", userRoute);
+app.use("/item", itemRoute);

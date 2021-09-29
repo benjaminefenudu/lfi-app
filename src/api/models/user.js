@@ -11,8 +11,8 @@ const userSchema = new Schema({
     type: String,
     max: 255,
     default: "",
-},
-phoneNo: {
+  },
+  phoneNo: {
     type: String,
     max: 20,
     default: "",

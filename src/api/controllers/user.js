@@ -17,7 +17,7 @@ exports.signUp = async (req, res) => {
     if (emailExists || phoneNoExists)
       return res
         .status(400)
-        .json({ success: false, msg: "Login details already exists!" });
+        .json({ success: false, msg: "Login details already exist!" });
 
     if (req.body.password !== req.body.confirmPassword) {
       return res
@@ -115,7 +115,7 @@ exports.editUserInfo = async (req, res) => {
   }
 };
 
-// Change Account Password
+// CHANGE PASSWORD
 exports.changePassword = async (req, res) => {
   // validate request body
   const { error } = userValidation.passwordChange(req.body);

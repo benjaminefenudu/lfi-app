@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 // Lost Item Validation
-exports.lostItemValidation = (item) => {
+exports.lostItem = (item) => {
   const schema = Joi.object({
     name: Joi.string().min(2).max(255).required(),
     category: Joi.string().min(2).max(255).required(),
@@ -18,7 +18,7 @@ exports.lostItemValidation = (item) => {
 };
 
 // Found Item Validation
-exports.foundItemValidation = (item) => {
+exports.foundItem = (item) => {
   const schema = Joi.object({
     name: Joi.string().min(2).max(255).required(),
     category: Joi.string().min(2).max(255).required(),
